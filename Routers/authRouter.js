@@ -19,6 +19,7 @@ async function signUpRouter(req, res) {
     let userData = req.body;
     let user = await userModel.create(userData);
     res.status(200).json({
+        status: true,
         message: 'User Created Successfully...',
         user: user
     })
@@ -36,20 +37,24 @@ async function loginUser(req, res) {
                 var token = jwt.sign({payload: uid}, JWT_KEY);
                 res.cookie('login', token, {httpOnly: true})
                 res.json({
+                    status:true,
                     message: 'User Logged In...'
                 })
             } else {
                 res.json({
+                    status:false,
                     message: 'Wrong Credentials...'
                 })
             }
         } else {
             res.json({
+                status:false,
                 message: 'Email Id not found'
             })
         }
     } catch(err) {
         res.json({
+            status:false,
             message: 'Error Encountered'
         })
     }
@@ -58,6 +63,7 @@ async function loginUser(req, res) {
 function logOut(req, res) {
     res.cookie('isLoggedIn', false, {httpOnly: true})
     res.json({
+        status:true,
         message: 'Logged Out Successfully....'
     })
 }

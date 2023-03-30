@@ -13,6 +13,7 @@ async function preditPrice(req, res) {
         area = req.body.area;
     } else {
         res.status(400).json({
+            status:false,
             message: 'Area is required...'
         })
         return;
@@ -120,6 +121,7 @@ async function preditPrice(req, res) {
     })
     .catch(function(error){
         res.status(400).json({
+            status:false,
             error: error
         })
     })

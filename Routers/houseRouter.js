@@ -14,6 +14,7 @@ async function addNewHouse(req, res) {
     let house = await houseModel.create(houseData);
     
     res.status(200).json({
+        status:true,
         message:"Success..",
         house: house
     })
@@ -23,6 +24,7 @@ async function allAvailableHouses(req, res) {
     let result = await houseModel.find();
     
     return res.json({
+        status:true,
         message: "Success..",
         houses: result
     })
