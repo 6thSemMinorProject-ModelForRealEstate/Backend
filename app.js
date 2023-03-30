@@ -6,7 +6,7 @@ const houseRouter = require('./Routers/houseRouter');
 require('./Models/DBConnection')
 
 const app = express();
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 app.use(express.json())
 app.use(cookieParser());
 
