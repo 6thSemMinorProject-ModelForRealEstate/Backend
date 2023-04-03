@@ -54,12 +54,6 @@ Backend of Real Estate model for Price Prediction.
 | `userEmail`      | `string` | **Required**. Email Id of the user. |
 | `userPassword`      | `string` | **Required**. Password of the user. |
 
-#### Logout User
-
-```bash
-  GET /auth/logout
-```
-
 #### Signup User
 
 ```bash
