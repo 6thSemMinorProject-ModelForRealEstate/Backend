@@ -9,7 +9,7 @@ Backend of Real Estate model for Price Prediction.
 #### Hosted Backend Base URL
 
 ```bash
-  https://realestateminorproject.glitch.me
+  https://realestate-minor-project.glitch.me
 ```
 
 #### Get all Available Houses
