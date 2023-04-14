@@ -21,7 +21,7 @@ Backend of Real Estate model for Price Prediction.
 #### Add a House
 
 ```bash
-  POST /house/addNewHouse
+  POST /house/availableHouses
 ```
 
 | Parameter | Type     | Description                       |
