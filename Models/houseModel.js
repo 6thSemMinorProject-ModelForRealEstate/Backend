@@ -33,7 +33,7 @@ const houseSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    atm:{
+    resale:{
         type: Number,
         required: true
     },
@@ -53,11 +53,23 @@ const houseSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    liftAvailable:{
+    joggingTrack:{
         type: Number,
         required: true
     },
     furnishing:{
+        type: Number,
+        required: true
+    },
+    location:{
+        type: Number,
+        required: true
+    },
+    city:{
+        type: Number,
+        required: true
+    },
+    rainWaterHarvesting:{
         type: Number,
         required: true
     },
