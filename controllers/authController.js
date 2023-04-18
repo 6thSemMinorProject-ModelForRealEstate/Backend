@@ -74,11 +74,29 @@ async function loginUser(req, res) {
             })
         }
     } catch(err) {
-        res.status(500).json({ message: err.message, status: false });
+        return res.status(500).json({ message: err.message, status: false });
+    }
+}
+
+async function getEmailId(req, res) {
+    let id = req.body.id;
+    try{
+        let user = await userModel.findById(id);
+        if(user) {
+            return res.json({
+                status: true,
+                emailId: user.userEmail
+            })
+        } else {
+            return res.status(500).json({message: "Email id not found"})
+        }
+    }catch(err) {
+        return res.status(500).json({message: err.message})
     }
 }
 
 module.exports = {
     loginUser: loginUser,
-    signUpUser: signUpUser
+    signUpUser: signUpUser,
+    getEmailId: getEmailId
 }
